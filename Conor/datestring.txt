@@ -1,0 +1,5 @@
+std::string date;
+res1[i][1].to_string(date);
+int  year = atoi(date.substr(0,4));
+int  month = atoi(date.substr(5,2));
+int  day = atoi(date.substr(8,2));
