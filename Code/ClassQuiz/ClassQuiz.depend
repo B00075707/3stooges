@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1450043584 source:f:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<string.h>
+	<vector>
+	<iomanip>
+	"user.h"
+
+1450043640 f:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\user.h
+	<fstream>
+	<string.h>
+	<iomanip>
+	<iostream>
+

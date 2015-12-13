@@ -4,16 +4,18 @@
 #include <string.h>
 #include <vector>
 #include <iomanip>
+
 using namespace std;
 
-class User;
-class StudentUser;
-class StudentProfile;
-class AdminUser;
 class QuizResult;
 class QuizAttempt;
 class QuestionBank;
 class Question;
+
+
+enum{ERROR,ID_NOT_FOUND,WRONG_PASS,STUDENT,ADMIN};
+
+#include "user.h"
 
 //! QuizResult class
 /********************************************//**
@@ -26,7 +28,7 @@ class QuizResult
     //! Constructor used to generate a QuizResult.
     /*!
         \param dateOfQuiz the date the quiz was taken.
-        \param answers Number of correct answers during the quiz.
+        \param correctAnswers Number of correct answers during the quiz.
     */
     QuizResult(string dateOfQuiz, int correctAnswers):
         dateOfQuiz(dateOfQuiz), correctAnswers(correctAnswers){}
@@ -38,171 +40,6 @@ class QuizResult
 };
 
 
-//! StudentProfile class
-/********************************************//**
-Class for a StudentProfile, which is a log of all quiz results for a particular student.
-***********************************************/
-class StudentProfile
-{
-    public:
-
-        //! StudentProfile constructor for initialisation.
-        /*!
-          \param ID a string containing the StudentUser's ID.
-        */
-        StudentProfile(string ID)
-        {
-            studentID = ID;
-            profileFileName = "data\\profiles\\" + ID + ".txt";
-        }
-
-        //! A member function to add a QuizResult from a quiz attempt.
-        /*!
-            \param *result a pointer to the QuizResult to add.
-        */
-        void addResult(QuizResult *result)
-        {
-            //results.push_back(result);
-
-            ofstream output(profileFileName.c_str(), std::ofstream::app);
-
-            output << std::setw(15) << std::left << "Date of quiz: " << result->dateOfQuiz << endl;
-            output << std::setw(15) << std::left << "Result: " << result->correctAnswers << "/10\n";
-
-            output.close();
-        }
-
-        //! A member function to print a profile to the screen.
-        /*!
-            Just calls prinToFile, but passes it the console output instead of a file.
-        */
-        void printToScreen()
-        {
-            printToFile(cout);
-        }
-
-        //! A member function to print a profile to a specified file.
-        /*!
-            \param &output a pointer to the output file stream to print to.
-        */
-        void printToFile(ostream &output)
-        {
-            ifstream input(profileFileName.c_str());
-
-            cout << "Student ID: " << studentID << endl;
-
-            if(input.is_open())
-            {
-                output << input.rdbuf();
-                input.close();
-            }
-        }
-
-    protected:
-
-        //! ID of StudentUser which owns the profile.
-        string studentID;
-        //! Name of file which stores the profile.
-        string profileFileName;
-};
-
-//! Base User class
-/********************************************//**
-Abstract base class User, to be used to implement different types of users.
-***********************************************/
-class User
-{
-    public:
-
-		//! A constructor for creating a new User with the provided userID.
-		/*!
-				\param ID a string containing the User's ID.
-		*/
-		User(string ID)
-		{
-			userID = ID;
-		}
-
-	protected:
-		//! User ID variable.
-		string userID;
-		//! User permission level (higher = more permissions).
-		char permissionLevel;
-};
-
-//! StudentUser class
-/********************************************//**
-Class for a StudentUser, which is created by a User logging in with student credentials.
-***********************************************/
-class StudentUser: public User
-{
-    public:
-
-        //! StudentUser constructor for students after logging in.
-		/*!
-	      \param ID a string containing the StudentUser's ID.
-		*/
-		StudentUser(string ID):
-            User::User(ID)
-		{
-			permissionLevel=1;
-			StudentProfile profile(ID);
-		}
-
-		//! A member function to attempt a quiz.
-		/*!
-
-		*/
-        void takeQuiz()
-        {
-
-        }
-
-
-    protected:
-        //! Student's profile containing previous quiz results.
-		StudentProfile profile();
-};
-
-//! AdminUser class
-/********************************************//**
-Class for a AdminUser, which is created by a User logging in with admin credentials.
-***********************************************/
-class AdminUser: public User
-{
-    public:
-
-        //! AdminUser constructor for admins after logging in.
-		/*!
-            \param ID a string containing the AdminUser's ID.
-		*/
-		AdminUser(string ID):
-            User(ID)
-		{
-            permissionLevel = 2;
-		}
-
-		//! A member function to view the profile of a student.
-		/*!
-            \param ID a string containing the ID of the student whose profile is desired.
-		*/
-		void viewProfile(string studentID)
-		{
-			string profileFileName = "data\\profiles\\" + studentID + ".txt";
-			ifstream input(profileFileName.c_str());
-			cout << "Student ID: " << studentID << endl;
-
-            if(input.is_open())
-            {
-                cout << input.rdbuf();
-                input.close();
-            }
-			else
-			{
-				cout << "ERROR: There is no profile for that student.\n";
-			}
-		}
-};
 
 
 int main(void)
@@ -210,33 +47,12 @@ int main(void)
 	return 0;
 }
 
-//! A function to login as a User.
-/*!
-		\param ID a string of the desired ID.
-		\param password a string containing the User's corresponding password.
-*/
-bool login(string ID,string password)
-{
-	//TODO: scan credentials to check if legit
-}
 
-/*
-Name:   file_copy_buff
-Arg1:   Reference to name of input file to open.
-Arg2:   Reference to already opened output stream.
-Uses rdbuf(), which returns a pointer to input's stream buffer, and prints
-out the contents of the input file to the output file. This method does not
-need any temporary strings or chars to hold the contents before printing to
-the output file.
--------------------------------------------------------------------------*/
-void file_copy_buff(const string &name, ofstream &output)
-{
-    ifstream input(name.c_str());
 
-    if(input.is_open())
-    {
-        output << input.rdbuf();
-        input.close();
-        cout << name << " added to output successfully.\n\n\n";
-    }
+void addUser(string ID, string password)
+{
+    string outfile = "data\\users.txt";
+    ofstream output(outfile.c_str(),std::ofstream::app);
+    output << ID << " " << encryptPassword(password) << endl;
+    output.close();
 }

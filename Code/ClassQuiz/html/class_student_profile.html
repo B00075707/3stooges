@@ -39,6 +39,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
+      <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -92,15 +93,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><a class="el" href="class_student_profile.html" title="StudentProfile class. ">StudentProfile</a> class.  
  <a href="class_student_profile.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="user_8h_source.html">user.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adff542cb5595ba22e7d0f43475610ef3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_profile.html#adff542cb5595ba22e7d0f43475610ef3">StudentProfile</a> (string ID)</td></tr>
 <tr class="memdesc:adff542cb5595ba22e7d0f43475610ef3"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_student_profile.html" title="StudentProfile class. ">StudentProfile</a> constructor for initialisation.  <a href="#adff542cb5595ba22e7d0f43475610ef3">More...</a><br /></td></tr>
 <tr class="separator:adff542cb5595ba22e7d0f43475610ef3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4af9ea78b939db8bca286f753550e698"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_profile.html#a4af9ea78b939db8bca286f753550e698">addResult</a> (<a class="el" href="class_quiz_result.html">QuizResult</a> *result)</td></tr>
-<tr class="memdesc:a4af9ea78b939db8bca286f753550e698"><td class="mdescLeft">&#160;</td><td class="mdescRight">A member function to add a <a class="el" href="class_quiz_result.html" title="QuizResult class. ">QuizResult</a> from a quiz attempt.  <a href="#a4af9ea78b939db8bca286f753550e698">More...</a><br /></td></tr>
-<tr class="separator:a4af9ea78b939db8bca286f753550e698"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52410e28b23a48921163e62689212d0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_profile.html#a52410e28b23a48921163e62689212d0c">addResult</a> (string dateOfQuiz, int correctAnswers)</td></tr>
+<tr class="memdesc:a52410e28b23a48921163e62689212d0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">A member function to add a <a class="el" href="class_quiz_result.html" title="QuizResult class. ">QuizResult</a> from a quiz attempt.  <a href="#a52410e28b23a48921163e62689212d0c">More...</a><br /></td></tr>
+<tr class="separator:a52410e28b23a48921163e62689212d0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2d8e1bbc6f054544607ec7d264c88a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_student_profile.html#af2d8e1bbc6f054544607ec7d264c88a4">printToScreen</a> ()</td></tr>
 <tr class="memdesc:af2d8e1bbc6f054544607ec7d264c88a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A member function to print a profile to the screen.  <a href="#af2d8e1bbc6f054544607ec7d264c88a4">More...</a><br /></td></tr>
 <tr class="separator:af2d8e1bbc6f054544607ec7d264c88a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -156,7 +159,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a4af9ea78b939db8bca286f753550e698"></a>
+<a class="anchor" id="a52410e28b23a48921163e62689212d0c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -166,9 +169,19 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
         <tr>
           <td class="memname">void StudentProfile::addResult </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_quiz_result.html">QuizResult</a> *&#160;</td>
-          <td class="paramname"><em>result</em></td><td>)</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>dateOfQuiz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>correctAnswers</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -181,7 +194,8 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <p>A member function to add a <a class="el" href="class_quiz_result.html" title="QuizResult class. ">QuizResult</a> from a quiz attempt. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">*result</td><td>a pointer to the <a class="el" href="class_quiz_result.html" title="QuizResult class. ">QuizResult</a> to add. </td></tr>
+    <tr><td class="paramname">dateOfQuiz</td><td>the date the quiz was taken. </td></tr>
+    <tr><td class="paramname">correctAnswers</td><td>the number of questions answered correctly. </td></tr>
   </table>
   </dd>
 </dl>
@@ -242,12 +256,12 @@ string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </div><div class="memdoc">
 
 <p>A member function to print a profile to the screen. </p>
-<p>Just calls prinToFile, but passes it the console output instead of a file. </p>
+<p>Just calls printToFile, but passes it the console output instead of a file. </p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>main.cpp</li>
+<li><a class="el" href="user_8h_source.html">user.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
