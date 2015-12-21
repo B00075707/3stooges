@@ -87,182 +87,92 @@ user.h\par \pard\plain
 \pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid     1 #ifndef USER_H_INCLUDED\par
     2 #define USER_H_INCLUDED\par
     3 \par
-    4 class User;\par
-    5 class StudentUser;\par
-    6 class StudentProfile;\par
-    7 class AdminUser;\par
-    8 int loginCheck(string,string);\par
-    9 \par
-   10 #include <fstream>\par
-   11 #include <string.h>\par
-   12 #include <iomanip>\par
-   13 #include <iostream>\par
-   14 \par
-   15 using namespace std;\par
-   16 \par
-   18 /********************************************/\par
-   21 class StudentProfile\par
-   22 \{\par
-   23     public:\par
-   24 \par
+    4 #include <fstream>\par
+    5 #include <string.h>\par
+    6 #include <iomanip>\par
+    7 #include <iostream>\par
+    8 \par
+    9 using namespace std;\par
+   10 \par
+   11 enum\{ERROR,ID_NOT_FOUND,WRONG_PASS,STUDENT,ADMIN\};\par
+   12 \par
+   13 class User;\par
+   14 class StudentUser;\par
+   15 class StudentProfile;\par
+   16 class AdminUser;\par
+   17 \par
+   19 \par
+   25 int loginCheck(string,string);\par
    26 \par
-   29         StudentProfile(string ID)\par
-   30         \{\par
-   31             studentID = ID;\par
-   32             profileFileName = "data\\\\profiles\\\\" + ID + ".txt";\par
-   33         \}\par
+   28 \par
+   33 string encryptPassword(string);\par
    34 \par
-   36 \par
-   40         void addResult(string dateOfQuiz, int correctAnswers)\par
-   41         \{\par
-   42             //results.push_back(result);\par
+   36 /********************************************/\par
+   39 class User\par
+   40 \{\par
+   41     public:\par
    43 \par
-   44             ofstream output(profileFileName.c_str(), std::ofstream::app);\par
-   45 \par
-   46             output << setw(15) << left << "Date of quiz: " << dateOfQuiz << endl;\par
-   47             output << setw(15) << left << "Result: " << correctAnswers << "/10\\n";\par
-   48 \par
-   49             output.close();\par
-   50         \}\par
-   51 \par
-   53 \par
-   56         void printToScreen()\par
-   57         \{\par
-   58             printToFile(cout);\par
-   59         \}\par
-   60 \par
-   62 \par
-   65         void printToFile(ostream &output)\par
-   66         \{\par
-   67             ifstream input(profileFileName.c_str());\par
-   68 \par
-   69             cout << "Student ID: " << studentID << endl;\par
-   70 \par
-   71             if(input.is_open())\par
-   72             \{\par
-   73                 output << input.rdbuf();\par
-   74                 input.close();\par
-   75             \}\par
-   76         \}\par
-   77 \par
-   78     protected:\par
-   79 \par
-   81         string studentID;\par
-   83         string profileFileName;\par
-   84 \};\par
-   85 \par
-   87 /********************************************/\par
-   90 class User\par
-   91 \{\par
-   92     public:\par
-   93 \par
-   95 \par
-   98         User(string ID)\par
-   99         \{\par
-  100             userID = ID;\par
-  101         \}\par
-  102 \par
-  103     protected:\par
-  105         string userID;\par
-  107         char permissionLevel;\par
-  108 \};\par
-  109 \par
-  111 /********************************************/\par
-  114 class StudentUser: public User\par
-  115 \{\par
-  116     public:\par
-  117 \par
+   46         User(string ID);\par
+   47 \par
+   48     protected:\par
+   50         string userID;\par
+   52         char permissionLevel;\par
+   53 \};\par
+   54 \par
+   56 /********************************************/\par
+   59 class StudentUser: public User\par
+   60 \{\par
+   61     public:\par
+   63 \par
+   66         StudentUser(string ID);\par
+   67 \par
+   69 \par
+   72         void takeQuiz();\par
+   73 \par
+   74     protected:\par
+   76         StudentProfile profile();\par
+   77 \};\par
+   78 \par
+   80 /********************************************/\par
+   83 class StudentProfile\par
+   84 \{\par
+   85     public:\par
+   86 \par
+   88 \par
+   91         StudentProfile(string ID);\par
+   92 \par
+   94 \par
+   98         void addResult(string dateOfQuiz, int correctAnswers);\par
+   99 \par
+  101 \par
+  104         void printToScreen();\par
+  105 \par
+  107 \par
+  110         void printToFile(ostream &output);\par
+  111 \par
+  112     protected:\par
+  113 \par
+  115         string studentID;\par
+  117         string profileFileName;\par
+  118 \};\par
   119 \par
-  122         StudentUser(string ID):\par
-  123             User::User(ID)\par
-  124         \{\par
-  125             permissionLevel=1;\par
-  126             StudentProfile profile(ID);\par
-  127         \}\par
-  128 \par
-  130 \par
-  133         void takeQuiz()\par
-  134         \{\par
+  120 \par
+  121 \par
+  123 /********************************************/\par
+  126 class AdminUser: public User\par
+  127 \{\par
+  128     public:\par
+  129 \par
+  131 \par
+  134         AdminUser(string ID);\par
   135 \par
-  136         \}\par
   137 \par
-  138 \par
-  139     protected:\par
-  141         StudentProfile profile();\par
-  142 \};\par
+  140         void viewProfile(string studentID);\par
+  141 \};\par
+  142 \par
   143 \par
-  145 /********************************************/\par
-  148 class AdminUser: public User\par
-  149 \{\par
-  150     public:\par
-  151 \par
-  153 \par
-  156         AdminUser(string ID):\par
-  157             User(ID)\par
-  158         \{\par
-  159             permissionLevel = 2;\par
-  160         \}\par
-  161 \par
-  163 \par
-  166         void viewProfile(string studentID)\par
-  167         \{\par
-  168             string profileFileName = "data\\\\profiles\\\\" + studentID + ".txt";\par
-  169             ifstream input(profileFileName.c_str());\par
-  170             cout << "Student ID: " << studentID << endl;\par
-  171 \par
-  172             if(input.is_open())\par
-  173             \{\par
-  174                 cout << input.rdbuf();\par
-  175                 input.close();\par
-  176             \}\par
-  177             else\par
-  178             \{\par
-  179                 cout << "ERROR: There is no profile for that student.\\n";\par
-  180             \}\par
-  181         \}\par
-  182 \};\par
-  183 \par
-  185 \par
-  189 int loginCheck(string userID, string userPass)\par
-  190 \{\par
-  191     ifstream input("data\\\\users.txt");\par
-  192 \par
-  193     if(input.is_open())\par
-  194     \{\par
-  195         //cout << input.rdbuf();\par
-  196         string fileID, filePassword;\par
-  197         int permissionLevel, status;\par
-  198         do\par
-  199         \{\par
-  200             input >> fileID >> filePassword >> permissionLevel;\par
-  201         \}while((userID != fileID)&&(!input.eof()));\par
-  202         if(input.eof()) status = ID_NOT_FOUND;\par
-  203         else if(encryptPassword(userPass) != filePassword) status = WRONG_PASS;\par
-  204         else if(encryptPassword(userPass) == filePassword)\par
-  205         \{\par
-  206             switch(permissionLevel)\par
-  207             \{\par
-  208             case 1:\par
-  209                 status = STUDENT;\par
-  210                 break;\par
-  211             case 2:\par
-  212                 status = ADMIN;\par
-  213                 break;\par
-  214             default:\par
-  215                 status = ERROR;\par
-  216                 break;\par
-  217             \}\par
-  218 \par
-  219         \}\par
-  220         else status = ERROR;\par
-  221         //cout << fileID << " " << filePassword << endl;\par
-  222         input.close();\par
-  223         return status;\par
-  224     \}\par
-  225     else return ERROR;\par
-  226 \}\par
-  227 \par
-  228 \par
-  229 #endif // USER_H_INCLUDED\par
+  144 \par
+  145 \par
+  146 #endif // USER_H_INCLUDED\par
 }
 }

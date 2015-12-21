@@ -151,14 +151,13 @@ drawRectangle(0,0,onGrid(width),onGrid(height));</custom_code>
     <coordinates>
       <x>330</x>
       <y>400</y>
-      <w>141</w>
-      <h>91</h>
+      <w>151</w>
+      <h>71</h>
     </coordinates>
     <panel_attributes>QuizResult
 --
 +dateOfQuiz: String
-+questionIDs: Int[]
-+result: Bool[]</panel_attributes>
++correctAnswers: Int</panel_attributes>
     <additional_attributes/>
     <custom_code>//This is a tutorial for a self resizing component 
 //In addition you are able to resize at manually
@@ -190,15 +189,14 @@ drawRectangle(0,0,onGrid(width),onGrid(height));</custom_code>
     <coordinates>
       <x>520</x>
       <y>510</y>
-      <w>201</w>
-      <h>111</h>
+      <w>191</w>
+      <h>91</h>
     </coordinates>
     <panel_attributes>StudentUser
 --
 +profile: StudentProfile
 --
 +permissionLevel: Char = 1
-+viewProfile(): StudentProfile
 +takeQuiz()</panel_attributes>
     <additional_attributes/>
     <custom_code>//This is a tutorial for a self resizing component 
@@ -232,16 +230,15 @@ drawRectangle(0,0,onGrid(width),onGrid(height));</custom_code>
       <x>510</x>
       <y>700</y>
       <w>241</w>
-      <h>131</h>
+      <h>111</h>
     </coordinates>
     <panel_attributes>StudentProfile
 --
-+results: QuizResult[]
 +studentID: String
++profileFileName: String
 --
 +addResult(newResult: QuizResult)
-+printToScreen()
-+printToFile(): Bool</panel_attributes>
++printToScreen()</panel_attributes>
     <additional_attributes/>
     <custom_code>//This is a tutorial for a self resizing component 
 //In addition you are able to resize at manually
@@ -272,7 +269,7 @@ drawRectangle(0,0,onGrid(width),onGrid(height));</custom_code>
     <type>CustomElementImpl</type>
     <coordinates>
       <x>880</x>
-      <y>700</y>
+      <y>740</y>
       <w>171</w>
       <h>111</h>
     </coordinates>
@@ -314,13 +311,14 @@ drawRectangle(0,0,onGrid(width),onGrid(height));</custom_code>
     <coordinates>
       <x>820</x>
       <y>510</y>
-      <w>281</w>
+      <w>191</w>
       <h>111</h>
     </coordinates>
     <panel_attributes>AdminUser
 --
 +permissionLevel: Char = 2
-+viewProfile(userID: String): StudentProfile
+--
++viewProfile(userID: String)
 +generateClassReport()
 +modifyQuestionBank()</panel_attributes>
     <additional_attributes/>
@@ -355,15 +353,14 @@ drawRectangle(0,0,onGrid(width),onGrid(height));</custom_code>
       <x>690</x>
       <y>270</y>
       <w>161</w>
-      <h>111</h>
+      <h>91</h>
     </coordinates>
     <panel_attributes>{abstract}
 /User/
 --
 +userID: String
 +permissionLevel: Char
---
-/+viewProfile()/</panel_attributes>
+--</panel_attributes>
     <additional_attributes/>
     <custom_code>//This is a tutorial for a self resizing component 
 //In addition you are able to resize at manually
@@ -407,13 +404,13 @@ contains &gt;</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>370</x>
-      <y>470</y>
+      <y>450</y>
       <w>160</w>
-      <h>300</h>
+      <h>320</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 saves from ^</panel_attributes>
-    <additional_attributes>15.0;19.0;10.0;280.0;140.0;280.0</additional_attributes>
+    <additional_attributes>15.0;19.0;10.0;300.0;140.0;300.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -470,14 +467,14 @@ has v</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>940</x>
-      <y>590</y>
+      <y>610</y>
       <w>110</w>
-      <h>130</h>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-&gt;
 m2=0..*
 generates v</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

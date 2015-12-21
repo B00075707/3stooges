@@ -33,6 +33,9 @@
 			<Add option="-fexceptions" />
 		</Compiler>
 		<Unit filename="main.cpp" />
+		<Unit filename="quiz.cpp" />
+		<Unit filename="quiz.h" />
+		<Unit filename="user.cpp" />
 		<Unit filename="user.h" />
 		<Extensions>
 			<code_completion />
