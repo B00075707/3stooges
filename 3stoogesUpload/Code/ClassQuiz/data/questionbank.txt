@@ -1,0 +1,105 @@
+What is 2 + 2?
+C
+17
+2
+4
+5
+/
+What is 3 * 2?
+A
+6
+2
+4
+3
+/
+What does the software term UML stand for?
+C	
+Underappreciated Modeling Language	
+United Monkeys Limited
+Unified Modeling Language
+Useless Modeling Language
+/
+What does the software term ASCII stand for?
+A
+American Standard Code For Information Interchange
+Amsterdam Subversive Code For Information Interchange
+Amerca Standard Code For Information Interchange
+American Standardised Code For Information Interchange
+/
+What does the software term OOAD stand for?
+C
+Object Orientated Analysing of Design
+Oduction To Object Analysis And Design
+Object Oriented Analysis and Design
+Object Obducted Alien Dude
+/
+What does the software term SD&Q stand for?
+A
+Software Design and Quality
+Strengths and Difficulties Questionnaire
+Student Descriptive Questionnaire
+Sales Diagnostic Questionnaire
+/
+What does the software term OCP stand for?
+C
+Open Core Protocol
+Obsessive Compulsive Posters
+Open-Close Principle
+Open Compute Project
+/
+What does the software term IEEE stand for?
+A	
+Institute of Electrical and Electronics Engineers	
+Individual Electrical Electronic Engraver
+Implicit Electrical Energized Enduro
+Individual Electromechanical Emphasised Entity
+/
+Input/output function prototypes and macros are defined in which header file?
+C
+conio.h
+stlib.h
+stdio.h
+dos.h
+/	
+What is the purpose of fflush() function?
+A
+flushes all streams and specified streams.
+flushes only specified stream.
+flushes input/output buffer.
+flushes file buffer.
+/
+What is (void*)0?
+C
+Representation of void pointer
+Error
+Representation of NULL pointer
+None of above
+/
+The operator used to get value at address stored in a pointer variable is
+A
+*
+&&
+%
+""
+/
+Which bitwise operator is suitable for turning off a particular bit in a number?
+A
+& operator
+! operator
+|| operator
+&& operator
+/
+Which bitwise operator is suitable for turning on a particular bit in a number?
+A
+| operator
+& operator
+&& operator
+|| operator
+/
+The binary equivalent of 5.375 is..
+A
+101.011
+101.101110111
+0xA3
+None of above
+/
