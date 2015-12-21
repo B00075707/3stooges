@@ -2,20 +2,25 @@
 
 vector<Question> questionBank;
 
-// Get current date/time, format is YYYY-MM-DD.HH:mm:ss
-//from http://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c
-const std::string currentDateTime() {
+/********************************************//**
+        currentDate
+***********************************************/
+string currentDate(void) {
     time_t     now = time(0);
     struct tm  tstruct;
     char       buf[80];
     tstruct = *localtime(&now);
-    // Visit http://en.cppreference.com/w/cpp/chrono/c/strftime
-    // for more information about date/time format
     strftime(buf, sizeof(buf), "%d-%m-%Y", &tstruct);
 
     return buf;
 }
 
+/********************************************/
+
+
+/********************************************//**
+        fillQuestionBank
+***********************************************/
 int fillQuestionBank(void)
 {
     ifstream quest_input("data\\questionbank.txt");
@@ -33,7 +38,6 @@ int fillQuestionBank(void)
             {
                 questionBank[i].addAnswerChoice(questbuff);
             }
-            //questionBank[i].printToScreen();
             i++;
         }
     }
@@ -43,6 +47,8 @@ int fillQuestionBank(void)
     }
     return questionBank.size();
 }
+
+/********************************************/
 
 
 /********************************************//**
@@ -54,10 +60,14 @@ QuizAttempt::QuizAttempt(StudentUser *student_user):
     runQuiz();
 }
 
+/**********************/
+
 void QuizAttempt::saveResultToProfile(void)
 {
-    student_user->profile->addResult(currentDateTime(), correctAnswers);
+    student_user->profile->addResult(currentDate(), correctAnswers);
 }
+
+/**********************/
 
 void QuizAttempt::runQuiz(void)
 {
@@ -73,7 +83,7 @@ void QuizAttempt::runQuiz(void)
     char inputAnswer;
     correctAnswers = 0;
 
-    for(int i=0; i<quizQuestions.size(); i++)
+    for(size_t i=0; i<quizQuestions.size(); i++)
     {
         system("CLS");
         quizQuestions[i]->askQuestion();
@@ -86,6 +96,8 @@ void QuizAttempt::runQuiz(void)
     saveResultToProfile();
 
 }
+
+/**********************/
 
 void QuizAttempt::getQuestions(void)
 {
@@ -106,6 +118,8 @@ void QuizAttempt::getQuestions(void)
 
 }
 
+/********************************************/
+
 
 /********************************************//**
         Question
@@ -115,15 +129,19 @@ void Question::addAnswerChoice(string answer)
     answerChoice.push_back(answer);
 }
 
+/**********************/
+
 void Question::askQuestion(void)
 {
     cout << questionString << endl;
-    for(int i=1; i<answerChoice.size(); i++)
+    for(size_t i=1; i<answerChoice.size(); i++)
     {
         char index = 'A' + (i-1);
         cout << index << ": " << answerChoice[i] << endl;
     }
 }
+
+/**********************/
 
 bool Question::checkAnswer(char answerInput)
 {
@@ -131,16 +149,4 @@ bool Question::checkAnswer(char answerInput)
     else return FALSE;
 }
 
-void Question::printToScreen()
-{
-    printToFile(cout);
-}
-
-void Question::printToFile(ostream &output)
-{
-    output << questionString << endl << correctAnswer << endl;
-    for(int i=0; i<answerChoice.size(); i++)
-    {
-        output << answerChoice[i] << endl;
-    }
-}
+/********************************************/

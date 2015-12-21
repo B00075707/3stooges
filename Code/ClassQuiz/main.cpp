@@ -10,31 +10,8 @@
 
 using namespace std;
 
-void addUser(string ID, string password, int permissionLevel)
-{
-    string outfile = "data\\users.txt";
-    ofstream output(outfile.c_str(),std::ofstream::app);
-    output << ID << " " << encryptPassword(password) << " " << permissionLevel << endl;
-    output.close();
-}
-
-
-
-
 int main(void)
 {
-//    cout << "ADDING USERS:\n";
-//    string input1, input2;
-//    int input3;
-//    cout << "Enter username, password, and permission level, with '|' to quit.\n";
-//    while((cin >> input1 >> input2 >> input3 )&& input1 != "|")
-//    {
-//        addUser(input1, input2, input3);
-//        cout << "NEXT\n";
-//    }
-
-
-
     string inputID, inputPassword;
     static loginState loginStatus;
 
@@ -71,6 +48,7 @@ int main(void)
                 break;
             case ADMIN:
                 cout << "\n\nSuccessfully logged in as admin " << inputID << ".\n\n";
+                activeStudent = NULL;
                 delete activeStudent;
                 break;
             default:
@@ -98,6 +76,8 @@ int main(void)
                 switch(menu_choice)
                 {
                     case 1:
+                        cout << "Answer questions by inputting corresponding letter for answer (i.e. A, B, etc).\n";
+                        system("PAUSE");
                         numQuestions = fillQuestionBank();
                         if(numQuestions == 0)
                         {
@@ -128,14 +108,11 @@ int main(void)
                 switch(menu_choice)
                 {
                     case 1:
-                        //activeAdmin->generateClassReport("report1");
                         cout << "Name for report: ";
                         cin >> reportName;
                         reportName = "data\\reports\\" + reportName;
                         activeAdmin->generateClassReport(reportName);
                         cout << "Report Generated.\n";
-                        reportName = "notepad.exe data\\reports\\" + reportName;
-                        system(reportName.c_str());
                         break;
                     case 2:
                         cout << "ID of desired student: ";
@@ -158,21 +135,6 @@ int main(void)
         }
         system("PAUSE");
     }
-
-
-    //if(loginStatus==ADMIN)
-//    if(activeAdmin)
-//    {
-//        //delete tempstud;
-////        AdminUser currentAdminUser(inputID);
-////        currentAdminUser.modifyQuestionBank();
-//        activeAdmin->modifyQuestionBank();
-//    }
-
-
-
-
-
 	return 0;
 }
 

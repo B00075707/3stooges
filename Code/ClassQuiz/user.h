@@ -18,7 +18,7 @@ class StudentUser;
 class StudentProfile;
 class AdminUser;
 
-//! A function to login as a User.
+//! A standalone function to login as a User.
 /*!
 		\param userID a string of the desired ID.
 		\param userPass a string containing the User's corresponding password.
@@ -28,9 +28,10 @@ class AdminUser;
 */
 loginState loginCheck(string userID, string userPass);
 
-//! A function to encrypt a password.
+//! A standalone function to encrypt a password.
 /*!
 		\param inputPassword a string of the User's password.
+		\return The resulting encrypted password.
 		Encrypts the password by modifying each character in the string, as well as adding extra characters.
 		It is consistent in its encryption, i.e. a particular input password will always result in the same encrypted password.
 */
@@ -84,7 +85,7 @@ class StudentProfile
 
         //! StudentProfile constructor for initialisation.
         /*!
-          \param ID a string containing the StudentUser's ID.
+            \param ID a string containing the StudentUser's ID.
         */
         StudentProfile(string ID);
 
@@ -97,7 +98,7 @@ class StudentProfile
 
         //! A member function to print a profile to the screen.
         /*!
-            Just calls printToFile, but passes it the console output instead of a file.
+            Simply calls printToFile, but passes it the console output instead of a file.
         */
         void printToScreen(void);
 
@@ -125,7 +126,7 @@ class AdminUser: public User
 {
     public:
 
-        //! AdminUser constructor for admins after logging in.
+        //! AdminUser constructor for initialisation.
 		/*!
             \param ID a string containing the AdminUser's ID.
 		*/
@@ -149,8 +150,5 @@ class AdminUser: public User
 		*/
 		void modifyQuestionBank();
 };
-
-
-
 
 #endif // USER_H_INCLUDED

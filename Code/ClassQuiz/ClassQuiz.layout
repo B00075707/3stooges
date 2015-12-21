@@ -2,18 +2,18 @@
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Release" />
 	<File name="main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="0" topLine="0" />
+		<Cursor position="183" topLine="0" />
 	</File>
-	<File name="quiz.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="1608" topLine="51" />
+	<File name="quiz.cpp" open="1" top="1" tabpos="5">
+		<Cursor position="546" topLine="0" />
 	</File>
 	<File name="quiz.h" open="1" top="0" tabpos="4">
-		<Cursor position="2429" topLine="0" />
+		<Cursor position="2022" topLine="122" />
 	</File>
 	<File name="user.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="1111" topLine="18" />
+		<Cursor position="784" topLine="0" />
 	</File>
-	<File name="user.h" open="1" top="1" tabpos="2">
-		<Cursor position="3567" topLine="97" />
+	<File name="user.h" open="1" top="0" tabpos="2">
+		<Cursor position="3271" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
