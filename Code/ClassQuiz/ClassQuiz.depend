@@ -1,0 +1,116 @@
+# depslib dependency file v1.0
+1450350240 source:f:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<string.h>
+	<vector>
+	<iomanip>
+	"user.h"
+	"quiz.h"
+
+1450471600 f:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\user.h
+	<fstream>
+	<string.h>
+	<iomanip>
+	<iostream>
+
+1450623420 source:g:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<string.h>
+	<vector>
+	<iomanip>
+	"user.h"
+	"quiz.h"
+
+1450625168 g:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\user.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<string.h>
+	<vector>
+	<iomanip>
+
+1450350324 source:f:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\user.cpp
+	"user.h"
+	<windows.h>
+
+1450702020 source:e:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\user.cpp
+	"user.h"
+	<windows.h>
+
+1450698868 e:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\user.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<string.h>
+	<vector>
+	<iomanip>
+
+1450702158 source:e:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\main.cpp
+	<iostream>
+	<fstream>
+	<sstream>
+	<string.h>
+	<vector>
+	<iomanip>
+	"user.h"
+	"quiz.h"
+
+1450695898 source:e:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\quiz.cpp
+	"quiz.h"
+
+1450695898 e:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\quiz.h
+	<iostream>
+	<stdlib.h>
+	<fstream>
+	<sstream>
+	<string.h>
+	<vector>
+	<iomanip>
+	<ctime>
+	<time.h>
+	<algorithm>
+	"user.h"
+
+1450350646 source:f:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\quiz.cpp
+	"quiz.h"
+
+1450471600 f:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\quiz.h
+	<iostream>
+	<fstream>
+	<sstream>
+	<string.h>
+	<vector>
+	<iomanip>
+	"user.h"
+
+1450621624 g:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\quiz.h
+	<iostream>
+	<stdlib.h>
+	<fstream>
+	<sstream>
+	<string.h>
+	<vector>
+	<iomanip>
+	<ctime>
+	<time.h>
+	<algorithm>
+	"user.h"
+
+1450625846 source:g:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\user.cpp
+	"user.h"
+	<windows.h>
+
+1450623444 source:g:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\quiz.cpp
+	"quiz.h"
+
+1450694320 e:\programs\portablegit-2.5.2.2-64-bit.7z\3stooges\code\classquiz\console_control.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	<windows.h>
+
