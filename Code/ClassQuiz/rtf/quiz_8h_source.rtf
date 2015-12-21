@@ -82,100 +82,91 @@
 }
 {\comment begin body}
 \pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
-user.h\par \pard\plain 
+quiz.h\par \pard\plain 
 {
-\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid     1 #ifndef USER_H_INCLUDED\par
-    2 #define USER_H_INCLUDED\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid     1 #ifndef QUIZ_H_INCLUDED\par
+    2 #define QUIZ_H_INCLUDED\par
     3 \par
-    4 \par
-    5 #include <iostream>\par
+    4 #include <iostream>\par
+    5 #include <stdlib.h>\par
     6 #include <fstream>\par
     7 #include <sstream>\par
     8 #include <string.h>\par
     9 #include <vector>\par
    10 #include <iomanip>\par
-   11 \par
-   12 using namespace std;\par
-   13 \par
-   14 enum loginState \{LOGIN_ERROR,ID_NOT_FOUND,WRONG_PASS,STUDENT,ADMIN\};\par
+   11 #include <ctime>\par
+   12 #include <time.h>\par
+   13 #include <algorithm>    // needed for random_shuffle\par
+   14 #include "user.h"\par
    15 \par
-   16 class User;\par
-   17 class StudentUser;\par
-   18 class StudentProfile;\par
-   19 class AdminUser;\par
+   16 #define TRUE 1\par
+   17 #define FALSE 0\par
+   18 \par
+   19 using namespace std;\par
    20 \par
-   22 \par
-   29 loginState loginCheck(string userID, string userPass);\par
-   30 \par
-   32 \par
-   38 string encryptPassword(string inputPassword);\par
-   39 \par
-   41 /********************************************/\par
-   44 class User\par
-   45 \{\par
-   46     public:\par
-   48 \par
-   51         User(string ID);\par
-   52 \par
-   53     protected:\par
-   55         string userID;\par
-   57         char permissionLevel;\par
-   58 \};\par
-   59 \par
-   61 /********************************************/\par
-   64 class StudentUser: public User\par
-   65 \{\par
-   66     public:\par
-   68 \par
-   71         StudentUser(string ID);\par
-   72 \par
-   73     //protected:\par
-   75         StudentProfile *profile;\par
-   76 \};\par
-   77 \par
-   79 /********************************************/\par
-   82 class StudentProfile\par
-   83 \{\par
-   84     public:\par
-   85 \par
-   87 \par
-   90         StudentProfile(string ID);\par
+   21 class QuizAttempt;\par
+   22 class Question;\par
+   23 \par
+   24 class too_few_questions \{\};\par
+   25 \par
+   26 \par
+   28 \par
+   32 string currentDate(void);\par
+   33 \par
+   34 \par
+   36 \par
+   39 int fillQuestionBank(void);\par
+   40 \par
+   41 \par
+   43 /********************************************/\par
+   46 class QuizAttempt\par
+   47 \{\par
+   48   public:\par
+   49 \par
+   51 \par
+   54     QuizAttempt(StudentUser *student_user);\par
+   55 \par
+   57 \par
+   60     void runQuiz(void);\par
+   61 \par
+   63 \par
+   66     void getQuestions(void);\par
+   67 \par
+   69 \par
+   72     void saveResultToProfile(void);\par
+   73 \par
+   74   protected:\par
+   76     StudentUser *student_user;\par
+   78     vector<Question*> quizQuestions;\par
+   80     int correctAnswers;\par
+   81 \};\par
+   82 \par
+   83 \par
+   85 /********************************************/\par
+   88 class Question\par
+   89 \{\par
+   90   public:\par
    91 \par
    93 \par
-   97         void addResult(string dateOfQuiz, int correctAnswers);\par
-   98 \par
-  100 \par
-  103         void printToScreen(void);\par
-  104 \par
-  106 \par
-  109         void printToFile(ostream &output);\par
-  110 \par
-  111     protected:\par
-  112 \par
-  114         string studentID;\par
-  116         string profileFileName;\par
-  117 \};\par
+   97     Question(string questionString, char correctAnswer):\par
+   98         questionString(questionString), correctAnswer(correctAnswer)\{\}\par
+   99 \par
+  101 \par
+  104     void addAnswerChoice(string answer);\par
+  105 \par
+  107 \par
+  110     void askQuestion(void);\par
+  111 \par
+  113 \par
+  117     bool checkAnswer(char answerInput);\par
   118 \par
-  119 \par
-  120 \par
-  122 /********************************************/\par
-  125 class AdminUser: public User\par
-  126 \{\par
-  127     public:\par
+  119   protected:\par
+  121     string questionString;\par
+  123     vector<string> answerChoice;\par
+  125     char correctAnswer;\par
+  126 \};\par
+  127 \par
   128 \par
-  130 \par
-  133         AdminUser(string ID);\par
-  134 \par
-  136 \par
-  139         void viewProfile(string studentID);\par
-  140 \par
-  142 \par
-  145         void generateClassReport(string reportFileName);\par
-  146 \par
-  148 \par
-  151         void modifyQuestionBank();\par
-  152 \};\par
-  153 \par
-  154 #endif // USER_H_INCLUDED\par
+  129 #endif // QUIZ_H_INCLUDED\par
 }
 }

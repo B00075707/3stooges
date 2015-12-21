@@ -54,7 +54,6 @@ Individual Electrical Electronic Engraver
 Implicit Electrical Energized Enduro
 Individual Electromechanical Emphasised Entity
 /
-	
 Input/output function prototypes and macros are defined in which header file?
 C
 conio.h
@@ -83,7 +82,6 @@ A
 %
 ""
 /
-	
 Which bitwise operator is suitable for turning off a particular bit in a number?
 A
 & operator
@@ -91,7 +89,6 @@ A
 || operator
 && operator
 /
-	
 Which bitwise operator is suitable for turning on a particular bit in a number?
 A
 | operator
@@ -99,7 +96,6 @@ A
 && operator
 || operator
 /
-	
 The binary equivalent of 5.375 is..
 A
 101.011
