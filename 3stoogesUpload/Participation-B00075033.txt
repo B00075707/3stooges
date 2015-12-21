@@ -1,0 +1,12 @@
+Aiden Barrett - B00075033
+
+My partners were Piotr Barycki and Conor O’Mathuna. Most of the work was completed as a group. The analysis and design documents were sketched out and planned on paper before individual implementation.
+
+Specific contributions include:
+- Class Diagrams
+- State Class Diagrams
+- Use Case Diagrams
+- Fully Dressed Use Case Analysis
+
+Performed Branch/Path analysis With Piotr.
+
