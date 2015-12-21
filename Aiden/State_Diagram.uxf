@@ -51,10 +51,10 @@ valign=top</panel_attributes>
     <coordinates>
       <x>440</x>
       <y>260</y>
-      <w>110</w>
+      <w>120</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>View Profile</panel_attributes>
+    <panel_attributes>Displaying Profile</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -65,7 +65,7 @@ valign=top</panel_attributes>
       <w>110</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Attempt Quiz</panel_attributes>
+    <panel_attributes>Taking Quiz</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -84,11 +84,11 @@ valign=top</panel_attributes>
     <coordinates>
       <x>490</x>
       <y>180</y>
-      <w>70</w>
+      <w>110</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-'Profile'</panel_attributes>
+'View Profile'</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
@@ -110,7 +110,7 @@ valign=top</panel_attributes>
       <w>400</w>
       <h>310</h>
     </coordinates>
-    <panel_attributes>Student Mode
+    <panel_attributes>Student User
 --
 
 
@@ -128,7 +128,7 @@ valign=top
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-'Quiz'</panel_attributes>
+'Take Quiz'</panel_attributes>
     <additional_attributes>10.0;20.0;110.0;20.0</additional_attributes>
   </element>
   <element>
@@ -163,8 +163,7 @@ valign=top
       <h>110</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-Logout
-
+Exit
 </panel_attributes>
     <additional_attributes>10.0;10.0;10.0;20.0;200.0;20.0;200.0;90.0</additional_attributes>
   </element>
@@ -173,10 +172,10 @@ Logout
     <coordinates>
       <x>110</x>
       <y>360</y>
-      <w>470</w>
+      <w>570</w>
       <h>430</h>
     </coordinates>
-    <panel_attributes>Admin Mode
+    <panel_attributes>Admin User
 --
 
 
@@ -221,12 +220,12 @@ valign=top
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>440</x>
+      <x>480</x>
       <y>460</y>
-      <w>110</w>
+      <w>170</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Class Report</panel_attributes>
+    <panel_attributes>Generating Class Report</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -234,33 +233,33 @@ valign=top
     <coordinates>
       <x>260</x>
       <y>450</y>
-      <w>200</w>
+      <w>240</w>
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-'Class Report'</panel_attributes>
-    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+'Generate Class Report'</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>260</x>
       <y>480</y>
-      <w>200</w>
+      <w>240</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>180.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>220.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
       <x>150</x>
       <y>710</y>
-      <w>110</w>
+      <w>170</w>
       <h>40</h>
     </coordinates>
-    <panel_attributes>Question Editor</panel_attributes>
+    <panel_attributes>Modifying Question Bank</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -280,17 +279,17 @@ valign=top
     <coordinates>
       <x>200</x>
       <y>520</y>
-      <w>70</w>
+      <w>170</w>
       <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-'Modify'</panel_attributes>
+'Modify Question Bank'</panel_attributes>
     <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>360</x>
+      <x>410</x>
       <y>570</y>
       <w>110</w>
       <h>40</h>
@@ -301,8 +300,8 @@ valign=top
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>490</x>
-      <y>730</y>
+      <x>550</x>
+      <y>720</y>
       <w>20</w>
       <h>20</h>
     </coordinates>
@@ -312,37 +311,38 @@ valign=top
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>220</x>
+      <x>240</x>
       <y>520</y>
-      <w>160</w>
-      <h>100</h>
+      <w>190</w>
+      <h>80</h>
     </coordinates>
-    <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0;140.0;80.0</additional_attributes>
+    <panel_attributes>lt=-&gt;
+'View Student Report'</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;170.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>240</x>
+      <x>220</x>
       <y>520</y>
-      <w>140</w>
-      <h>80</h>
+      <w>210</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-'Student ID'</panel_attributes>
-    <additional_attributes>120.0;60.0;10.0;60.0;10.0;10.0</additional_attributes>
+</panel_attributes>
+    <additional_attributes>190.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>260</x>
       <y>500</y>
-      <w>260</w>
-      <h>250</h>
+      <w>320</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
-Logout</panel_attributes>
-    <additional_attributes>10.0;20.0;240.0;20.0;240.0;230.0</additional_attributes>
+Exit</panel_attributes>
+    <additional_attributes>10.0;20.0;300.0;20.0;300.0;220.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
@@ -370,35 +370,13 @@ Login == Student</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
-      <y>140</y>
-      <w>170</w>
-      <h>30</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
       <x>190</x>
-      <y>150</y>
-      <w>30</w>
-      <h>230</h>
-    </coordinates>
-    <panel_attributes>lt=-&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>210</x>
       <y>150</y>
       <w>120</w>
       <h>230</h>
     </coordinates>
     <panel_attributes>lt=-&gt;
 Login == Admin</panel_attributes>
-    <additional_attributes>10.0;210.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;210.0</additional_attributes>
   </element>
 </diagram>
