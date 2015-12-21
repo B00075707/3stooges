@@ -1,0 +1,109 @@
+\hypertarget{class_student_profile}{}\section{Student\+Profile Class Reference}
+\label{class_student_profile}\index{Student\+Profile@{Student\+Profile}}
+
+
+\hyperlink{class_student_profile}{Student\+Profile} class.  
+
+
+
+
+{\ttfamily \#include $<$user.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_student_profile_adff542cb5595ba22e7d0f43475610ef3}{Student\+Profile} (string I\+D)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_student_profile}{Student\+Profile} constructor for initialisation. \end{DoxyCompactList}\item 
+void \hyperlink{class_student_profile_a52410e28b23a48921163e62689212d0c}{add\+Result} (string date\+Of\+Quiz, int correct\+Answers)
+\begin{DoxyCompactList}\small\item\em A member function to add a \hyperlink{class_quiz_result}{Quiz\+Result} from a quiz attempt. \end{DoxyCompactList}\item 
+void \hyperlink{class_student_profile_af2d8e1bbc6f054544607ec7d264c88a4}{print\+To\+Screen} ()
+\begin{DoxyCompactList}\small\item\em A member function to print a profile to the screen. \end{DoxyCompactList}\item 
+void \hyperlink{class_student_profile_a53043210f40c1b2dea4a0c43eb9dcd58}{print\+To\+File} (ostream \&output)
+\begin{DoxyCompactList}\small\item\em A member function to print a profile to a specified file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_student_profile_a064b84fa7af49381f0e92ed0269079ce}{}string \hyperlink{class_student_profile_a064b84fa7af49381f0e92ed0269079ce}{student\+I\+D}\label{class_student_profile_a064b84fa7af49381f0e92ed0269079ce}
+
+\begin{DoxyCompactList}\small\item\em I\+D of \hyperlink{class_student_user}{Student\+User} which owns the profile. \end{DoxyCompactList}\item 
+\hypertarget{class_student_profile_a291e232fb2269319d2e3d903c8e5b5b2}{}string \hyperlink{class_student_profile_a291e232fb2269319d2e3d903c8e5b5b2}{profile\+File\+Name}\label{class_student_profile_a291e232fb2269319d2e3d903c8e5b5b2}
+
+\begin{DoxyCompactList}\small\item\em Name of file which stores the profile. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_student_profile}{Student\+Profile} class. 
+
+Class for a \hyperlink{class_student_profile}{Student\+Profile}, which is a log of all quiz results for a particular student. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_student_profile_adff542cb5595ba22e7d0f43475610ef3}{}\index{Student\+Profile@{Student\+Profile}!Student\+Profile@{Student\+Profile}}
+\index{Student\+Profile@{Student\+Profile}!Student\+Profile@{Student\+Profile}}
+\subsubsection[{Student\+Profile(string I\+D)}]{\setlength{\rightskip}{0pt plus 5cm}Student\+Profile\+::\+Student\+Profile (
+\begin{DoxyParamCaption}
+\item[{string}]{I\+D}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_student_profile_adff542cb5595ba22e7d0f43475610ef3}
+
+
+\hyperlink{class_student_profile}{Student\+Profile} constructor for initialisation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em I\+D} & a string containing the \hyperlink{class_student_user}{Student\+User}\textquotesingle{}s I\+D. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_student_profile_a52410e28b23a48921163e62689212d0c}{}\index{Student\+Profile@{Student\+Profile}!add\+Result@{add\+Result}}
+\index{add\+Result@{add\+Result}!Student\+Profile@{Student\+Profile}}
+\subsubsection[{add\+Result(string date\+Of\+Quiz, int correct\+Answers)}]{\setlength{\rightskip}{0pt plus 5cm}void Student\+Profile\+::add\+Result (
+\begin{DoxyParamCaption}
+\item[{string}]{date\+Of\+Quiz, }
+\item[{int}]{correct\+Answers}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_student_profile_a52410e28b23a48921163e62689212d0c}
+
+
+A member function to add a \hyperlink{class_quiz_result}{Quiz\+Result} from a quiz attempt. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em date\+Of\+Quiz} & the date the quiz was taken. \\
+\hline
+{\em correct\+Answers} & the number of questions answered correctly. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_student_profile_a53043210f40c1b2dea4a0c43eb9dcd58}{}\index{Student\+Profile@{Student\+Profile}!print\+To\+File@{print\+To\+File}}
+\index{print\+To\+File@{print\+To\+File}!Student\+Profile@{Student\+Profile}}
+\subsubsection[{print\+To\+File(ostream \&output)}]{\setlength{\rightskip}{0pt plus 5cm}void Student\+Profile\+::print\+To\+File (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{output}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_student_profile_a53043210f40c1b2dea4a0c43eb9dcd58}
+
+
+A member function to print a profile to a specified file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em \&output} & a pointer to the output file stream to print to. \\
+\hline
+\end{DoxyParams}
+\hypertarget{class_student_profile_af2d8e1bbc6f054544607ec7d264c88a4}{}\index{Student\+Profile@{Student\+Profile}!print\+To\+Screen@{print\+To\+Screen}}
+\index{print\+To\+Screen@{print\+To\+Screen}!Student\+Profile@{Student\+Profile}}
+\subsubsection[{print\+To\+Screen()}]{\setlength{\rightskip}{0pt plus 5cm}void Student\+Profile\+::print\+To\+Screen (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\label{class_student_profile_af2d8e1bbc6f054544607ec7d264c88a4}
+
+
+A member function to print a profile to the screen. 
+
+Just calls print\+To\+File, but passes it the console output instead of a file. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+user.\+h\end{DoxyCompactItemize}

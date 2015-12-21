@@ -1,0 +1,11 @@
+Conor O'Mathuna - B00075707
+
+My partners were Piotr Barycki and Aiden Barrett. We did most of the work
+together as a group. For instance, each of the analysis and design diagrams were first
+drawn on paper together, and then we each drew some of them on a computer.
+
+Specific contributions:
+- Activity Diagram
+- Refined Class Diagram
+- C++ program
+- Doxygen documentation
