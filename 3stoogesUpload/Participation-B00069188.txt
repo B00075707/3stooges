@@ -1,6 +1,9 @@
 Piotr Barycki - B00069188
 
+My partners were Conor O'Mathuna and Aiden Barrett. We did most of the work
+together in the group. All of the diagrams were drawn on paper first and then everyone was given his task.
 
-Drawn Sequence Diagrams 
-Assembled: Design, Software analysis, SRS amd Testing documents. To be checked and formatted by Conor.
+Specific contributions:
+Sequence Diagrams 
+Assembled Design, Software analysis, SRS amd Testing documents. To be checked and formatted by Conor.
 Performed Branch/Path analysis With Aiden
